@@ -41,7 +41,7 @@ about:
   license: MIT
   license_family: MIT
   license_file: LICENSE
-  doc_url: https://grapheme.readthedocs.io/en/latest/
+  doc_url: https://grapheme.readthedocs.io/
   dev_url: https://github.com/alvinlindstam/grapheme
 
 extra:
