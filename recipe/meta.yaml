@@ -10,16 +10,18 @@ source:
   sha256: 44c2b9f21bbe77cfb05835fec230bd435954275267fea1858013b102f8603cca
 
 build:
-  noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
+  script: {{ PYTHON }} -m pip install . --no-deps --no-build-isolation -vv
   number: 0
+  skip: True # [py<36]
 
 requirements:
   host:
-    - python >=3.6
+    - python
     - pip
+    - wheel
+    - setuptools
   run:
-    - python >=3.6
+    - python
 
 test:
   imports:
@@ -31,9 +33,16 @@ test:
 
 about:
   home: https://github.com/alvinlindstam/grapheme
-  summary: Unicode grapheme helpers
+  summary: A python package for grapheme aware string handling
+  description: |
+    A Python package for working with user perceived characters. More specifically, 
+    string manipulation and calculation functions for working with grapheme 
+    cluster groups (graphemes) as defined by the Unicode Standard Annex #29.
   license: MIT
+  license_family: MIT
   license_file: LICENSE
+  doc_url: https://grapheme.readthedocs.io/
+  dev_url: https://github.com/alvinlindstam/grapheme
 
 extra:
   recipe-maintainers:
